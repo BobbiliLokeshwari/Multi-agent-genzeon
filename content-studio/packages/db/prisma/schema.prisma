@@ -1,0 +1,68 @@
+// Content Studio data model.
+// One table: every generation run, from the moment it is queued until it
+// finishes. Successful rows double as the writer's long-term memory.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum GenerationStatus {
+  QUEUED
+  RUNNING
+  SUCCEEDED
+  FAILED
+}
+
+enum GenerationSource {
+  STUDIO
+  CLI_IMPORT
+}
+
+model Generation {
+  id             String           @id @default(uuid(7)) @db.Uuid
+  status         GenerationStatus @default(QUEUED)
+  source         GenerationSource @default(STUDIO)
+  /// Last pipeline step that finished (research, write, validate, judge, memory).
+  currentStep    String?          @map("current_step")
+  attempts       Int              @default(0)
+
+  topic          String
+  /// Lower-cased, de-duplicated topic words. GIN-indexed for memory lookups.
+  topicTokens    String[]         @map("topic_tokens")
+  tone           String
+  postType       String           @map("post_type")
+  promptVersion  String           @map("prompt_version")
+  agentModel     String?          @map("agent_model")
+  judgeModel     String?          @map("judge_model")
+
+  /// Denormalised from `post` / `validation` / `judge` for listing, sorting and charts.
+  postContent    String?          @map("post_content")
+  hook           String?
+  validatorScore Float?           @map("validator_score")
+  judgeScore     Float?           @map("judge_score")
+
+  research       Json?
+  post           Json?
+  validation     Json?
+  judge          Json?
+  issues         Json             @default("[]")
+
+  failureCode    String?          @map("failure_code")
+  failureStep    String?          @map("failure_step")
+  failureDetail  String?          @map("failure_detail")
+
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
+  startedAt      DateTime?        @map("started_at") @db.Timestamptz(3)
+  finishedAt     DateTime?        @map("finished_at") @db.Timestamptz(3)
+  updatedAt      DateTime         @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@index([createdAt(sort: Desc), id(sort: Desc)])
+  @@index([status, createdAt(sort: Desc)])
+  @@index([topicTokens], type: Gin)
+  @@map("generations")
+}

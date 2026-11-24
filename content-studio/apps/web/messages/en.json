@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "title": "Content Studio",
+    "titleTemplate": "%s · Content Studio",
+    "description": "Research, write, validate and judge LinkedIn posts with a multi-agent pipeline."
+  },
+  "nav": {
+    "label": "Main navigation",
+    "skipToContent": "Skip to content",
+    "generate": "Generate",
+    "history": "History",
+    "insights": "Insights",
+    "prompts": "Prompts"
+  },
+  "locale": {
+    "label": "Language"
+  },
+  "common": {
+    "notAvailable": "—",
+    "notScored": "Not scored",
+    "scoreOutOf": "{score} / {max}",
+    "copy": "Copy post",
+    "copied": "Copied",
+    "copyFailed": "Couldn't copy",
+    "retry": "Try again",
+    "loading": "Loading…"
+  },
+  "status": {
+    "QUEUED": "Queued",
+    "RUNNING": "Running",
+    "SUCCEEDED": "Succeeded",
+    "FAILED": "Failed"
+  },
+  "source": {
+    "STUDIO": "Content Studio",
+    "CLI_IMPORT": "Imported from the CLI"
+  },
+  "tones": {
+    "professional": "Professional",
+    "casual": "Casual",
+    "thought-leader": "Thought leader"
+  },
+  "postTypes": {
+    "story": "Story",
+    "hot-take": "Hot take",
+    "announcement": "Announcement",
+    "lesson-learned": "Lesson learned",
+    "thought-leader": "Thought leadership"
+  },
+  "judgeCriteria": {
+    "hook": "Hook",
+    "authenticity": "Authenticity",
+    "clarity": "Clarity",
+    "engagement": "Engagement",
+    "toneMatch": "Tone match"
+  },
+  "steps": {
+    "research": {
+      "name": "Research",
+      "role": "Web search, then the research agent picks facts and angles"
+    },
+    "write": {
+      "name": "Write",
+      "role": "The writer drafts the post, using similar past posts as style memory"
+    },
+    "validate": {
+      "name": "Validate",
+      "role": "The validator checks accuracy, tone and clichés"
+    },
+    "judge": {
+      "name": "Judge",
+      "role": "An independent judge scores five criteria"
+    },
+    "memory": {
+      "name": "Memory",
+      "role": "The finished post is saved for future runs"
+    },
+    "state": {
+      "pending": "Waiting",
+      "active": "Running",
+      "done": "Done",
+      "warning": "Done with warnings",
+      "failed": "Failed",
+      "skipped": "Skipped"
+    },
+    "summary": {
+      "research": "{sources, plural, =0 {No sources} one {# source} other {# sources}} from {queries, plural, one {# search} other {# searches}}",
+      "write": "{words, plural, one {# word} other {# words}}",
+      "validate": "Validator score: {score}",
+      "judge": "Judge score: {score}",
+      "memory": "Saved to memory"
+    },
+    "announcement": "{step}: {state}"
+  },
+  "generate": {
+    "title": "Generate",
+    "subtitle": "Give the agents a topic. They research it, write a post, check it and score it, and you can watch every step.",
+    "formTitle": "New post",
+    "topic": "Topic or idea",
+    "topicPlaceholder": "e.g. Medical AI investment in India",
+    "topicHint": "Up to {max, number} characters.",
+    "tone": "Tone",
+    "postType": "Post type",
+    "promptVersion": "Prompt version",
+    "defaultVersion": "{version} (default)",
+    "submit": "Generate post",
+    "submitting": "Queuing…",
+    "idle": "Your run appears here. Each agent's result shows up as soon as it finishes.",
+    "recent": "Recent runs",
+    "recentEmpty": "No runs yet. Your first post will show up here.",
+    "viewAll": "View all history"
+  },
+  "run": {
+    "eyebrow": "Live run",
+    "connecting": "Connecting to live updates…",
+    "queued": "Waiting for a free worker…",
+    "reconnecting": "Connection lost. Reconnecting…",
+    "unavailable": "Live updates are unavailable. The run may not exist, or the API is down.",
+    "closed": "Live updates stopped. Refresh the page to see the latest state.",
+    "openDetails": "Open full details"
+  },
+  "result": {
+    "post": "Post",
+    "words": "{count, plural, one {# word} other {# words}}",
+    "scores": "Scores",
+    "validator": "Validator",
+    "judge": "Judge",
+    "judgedBy": "Judged by {model}",
+    "verdict": "Verdict: {verdict}",
+    "feedback": "Feedback",
+    "suggestions": "Validator suggestions",
+    "accuracyIssues": "Accuracy issues",
+    "qualityIssues": "Quality issues",
+    "cringeFlags": "Clichés flagged",
+    "strengths": "Judge: strengths",
+    "weaknesses": "Judge: weaknesses",
+    "deductions": "Judge: deductions",
+    "noFeedback": "No feedback was recorded for this run.",
+    "research": "Research",
+    "keyFacts": "Key facts",
+    "trendingAngles": "Trending angles",
+    "factsUsed": "Facts used in the post",
+    "sources": "Sources",
+    "queries": "Searches run",
+    "warnings": "Warnings",
+    "failureAtStep": "The run failed at the {step} step.",
+    "failureUnknownStep": "The run failed.",
+    "technicalDetail": "Technical detail"
+  },
+  "issues": {
+    "RESEARCH_SEARCH_FAILED": "A web search failed; research continued with the other results.",
+    "RESEARCH_SYNTHESIS_FAILED": "The research agent failed, so the writer got the raw search results.",
+    "RESEARCH_SYNTHESIS_EMPTY": "The research agent returned nothing, so the writer got the raw search results.",
+    "WRITER_FAILED": "The writer did not return a usable post.",
+    "VALIDATOR_FAILED": "The validator failed, so the post was not validated.",
+    "JUDGE_FAILED": "The judge failed, so the post was not scored.",
+    "JUDGE_DISABLED": "The judge is turned off (JUDGE_ENABLED=false).",
+    "ENQUEUE_FAILED": "The run could not be added to the queue.",
+    "PIPELINE_ERROR": "An unexpected error stopped the run."
+  },
+  "history": {
+    "title": "History",
+    "subtitle": "Every run, including posts imported from the command-line tool.",
+    "filters": "Filter runs",
+    "search": "Search topics",
+    "status": "Status",
+    "tone": "Tone",
+    "postType": "Post type",
+    "all": "All",
+    "apply": "Apply",
+    "reset": "Reset",
+    "empty": "No runs match these filters.",
+    "next": "Next page",
+    "first": "Back to first page"
+  },
+  "table": {
+    "caption": "Generation runs",
+    "topic": "Topic",
+    "tone": "Tone",
+    "postType": "Type",
+    "status": "Status",
+    "validator": "Validator",
+    "judge": "Judge",
+    "created": "Created"
+  },
+  "detail": {
+    "eyebrow": "Run details",
+    "status": "Status",
+    "source": "Source",
+    "tone": "Tone",
+    "postType": "Post type",
+    "promptVersion": "Prompt version",
+    "agentModel": "Agent model",
+    "judgeModel": "Judge model",
+    "attempts": "Attempts",
+    "created": "Created",
+    "duration": "Duration",
+    "inProgress": "This run is still in progress.",
+    "watchLive": "Watch it live",
+    "back": "Back to history"
+  },
+  "insights": {
+    "title": "Insights",
+    "subtitle": "How the agents score posts. Averages count successful runs only.",
+    "totalRuns": "Total runs",
+    "successRate": "Success rate",
+    "avgValidator": "Average validator score",
+    "avgJudge": "Average judge score",
+    "byTone": "By tone",
+    "byPostType": "By post type",
+    "groupDetail": "{count, plural, one {# run} other {# runs}} · judge {judge} · validator {validator}",
+    "trend": "Daily average judge score",
+    "trendSubtitle": "Last {days, plural, one {# day} other {# days}}, {timeZone} time",
+    "trendDetail": "{count, plural, one {# run} other {# runs}} · {score}",
+    "trendEmpty": "No successful runs in this period.",
+    "gapTitle": "Biggest disagreement",
+    "gapBody": "The validator gave {validator} and the judge gave {judge}, a gap of {gap}.",
+    "gapNone": "No run has both scores yet.",
+    "empty": "No successful runs yet. Generate a post to see insights."
+  },
+  "prompts": {
+    "title": "Prompts",
+    "subtitle": "The prompt files the agents use, read straight from the prompts folder. Edit them in your repository; the worker picks up changes when it restarts.",
+    "versions": "Prompt versions",
+    "default": "default",
+    "placeholders": "Placeholders",
+    "noPlaceholders": "No placeholders in this file.",
+    "kinds": {
+      "agent": "Agent profile",
+      "task": "Task prompt",
+      "prompt": "Judge prompt",
+      "config": "Pipeline config"
+    },
+    "empty": "No prompt versions found."
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "BAD_REQUEST": "The request was not valid.",
+    "VALIDATION_ERROR": "Some fields need attention.",
+    "NOT_FOUND": "We couldn't find that.",
+    "PROMPT_VERSION_NOT_FOUND": "That prompt version doesn't exist.",
+    "PAYLOAD_TOO_LARGE": "That request is too large.",
+    "RATE_LIMITED": "Too many posts in a short time. Wait a minute and try again.",
+    "QUEUE_UNAVAILABLE": "The job queue is unavailable. Check that Redis and the worker are running.",
+    "SERVICE_UNAVAILABLE": "A service is unavailable. Try again shortly.",
+    "INTERNAL_ERROR": "The server hit an unexpected error.",
+    "API_UNREACHABLE": "Can't reach the Content Studio API. Check that it is running.",
+    "topicField": "Enter a topic of up to {max, number} characters."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "That page doesn't exist, or the run was removed.",
+    "home": "Go to Generate"
+  }
+}

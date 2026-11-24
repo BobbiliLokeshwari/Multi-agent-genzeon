@@ -1,0 +1,25 @@
+# ═══════════════════════════════════════════════════════════════
+#  linkedin_generator.py  (LangGraph pipeline — Gemini)
+# ═══════════════════════════════════════════════════════════════
+
+# ── Agent orchestration ──
+langgraph>=0.2.0
+
+# ── Gemini, via its OpenAI-compatible endpoint (the OpenAI SDK) ──
+openai>=1.99.0
+
+# ── Research tool ──
+tavily-python>=0.3.3
+
+# ── Utilities ──
+python-dotenv>=1.0.0
+pyyaml>=6.0
+pydantic>=2.5.0
+
+# ═══════════════════════════════════════════════════════════════
+#  linkedin_generator_autogen.py  (AutoGen pipeline — Gemini)
+#  Only needed if you run the AutoGen script.
+# ═══════════════════════════════════════════════════════════════
+autogen-agentchat>=0.7.0
+autogen-core>=0.7.0
+autogen-ext[openai]>=0.7.0

@@ -1,0 +1,28 @@
+{
+  "name": "@studio/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "generate": "prisma generate",
+    "postinstall": "prisma generate",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "import-history": "tsx scripts/import-history.ts",
+    "studio": "prisma studio",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "@studio/shared": "*",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "prisma": "6.19.3"
+  }
+}

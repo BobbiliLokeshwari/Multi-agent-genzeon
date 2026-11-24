@@ -1,0 +1,21 @@
+# Pipeline wiring for Content Studio (the TypeScript port in ../content-studio).
+# linkedin_generator.py does not read this file; it keeps the same values in
+# code. Placeholders use the same $name syntax as the other prompt files.
+
+# One Tavily search per entry. $topic is the user's topic.
+research_queries:
+  - "$topic recent statistics"
+  - "$topic trends and recent news"
+  - "$topic expert opinions and analysis"
+
+# System prompt for the research, writer and validator agents, filled from
+# <name>_agent.yaml ($role, $goal, $backstory).
+agent_system_prompt: "Role: $role\nGoal: $goal\nBackstory: $backstory"
+
+# How past posts are shown to the writer ($memory_context in writing_task.md).
+# Entries are joined with a newline after the header.
+memory_context:
+  empty: "No previous posts found in memory."
+  header: "PREVIOUS POSTS ON SIMILAR TOPICS (style reference — avoid repetition):"
+  entry: "\n--- Post $index | Topic: $topic | Validator: $validator_score/10 | Judge: $judge_score/10 | Tone: $tone ---\n$snippet"
+  not_available: "N/A"

@@ -1,0 +1,32 @@
+[
+  {
+    "topic": "ai in india 2027",
+    "tone": "professional",
+    "post_type": "thought-leader",
+    "post_content": "By 2027, India will create 2.3 million AI jobs.\n\nThere is just one problem: we may only have 1.2 million people qualified to fill them.\n\nAccording to NASSCOM and BCG, India's AI market will triple to over $17 billion (\u20b91.45 lakh crore) by 2027. The momentum looks undeniable:\n\n\u2192 92% of Indian knowledge workers use GenAI at work (vs. 72% globally).\n\u2192 India ranks #1 worldwide in AI skill penetration.\n\u2192 The \u20b910,000 crore IndiaAI Mission is backing this with 10,000+ national GPUs.\n\nYet beneath the headline growth lies a strategic paradox.\n\nWhile we lead the world in adoption, India ranks #89 out of 109 in deep technical proficiency.\n\nWe are exceptional at consuming applications, but underrepresented in building foundational models and core IP. As the industry pivots from basic GenAI to complex agentic architectures, knowing how to write prompts won't safeguard high-value tech roles.\n\nThe real test for India in 2027 isn't whether we spend $17 billion on software.\n\nIt is whether we build the intellectual property ourselves, or simply pay rent on compute and models engineered elsewhere.\n\nTo bridge the looming 1.1-million talent deficit, our tech ecosystem must pivot immediately from routine implementation to foundational engineering.\n\nCan India transition from the world's digital back office to the world's AI factory by 2027?\n\nI\u2019d love to hear your perspective below.",
+    "validation_score": "9/10",
+    "judge_score": 9,
+    "prompt_version": "v1",
+    "timestamp": "2026-11-15T22:17:49.972474"
+  },
+  {
+    "topic": "medical ai investment in india",
+    "tone": "professional",
+    "post_type": "hot-take",
+    "post_content": "India has 170 medical AI startups. Exactly 4 have crossed Series B.\n\nFunding rebounded sharply to $206M in 2025, and projections suggest the market will surge tenfold to $4.77B by 2034. On paper, the sector looks like a breakout success.\n\nIn reality, over 90% of Indian healthtech AI is trapped in \"pilot purgatory.\"\n\nHere is the uncomfortable truth: India doesn't have an algorithm crisis. We have a plumbing crisis.\n\nVenture capital is racing to fund clinical foundation models, yet overlooking the baseline reality of healthcare delivery:\n\n\u2192 Over 1.19 billion health records are linked via national ABDM rails.\n\u2192 Yet hospital EMR adoption remains stuck at roughly 35%.\n\u2192 Nearly two-thirds of clinical documentation outside metro hospital chains is still recorded on paper.\n\nYou cannot deploy scalable, multi-modal diagnostic AI when foundational workflows aren't even digitized.\n\nCombine this with high clinical validation costs and a lack of clear reimbursement pathways from insurers, and the scaling math collapses before Series A.\n\nThe real winners in Indian medical AI won't be the teams with the flashiest models. They will be the ones unglamorous enough to fix the workflow infrastructure and deliver measurable enterprise ROI to hospital administrators.\n\nAre we building medical AI for the reality of Indian healthcare delivery\u2014or just for demo days?\n\nI\u2019d love to hear your thoughts.",
+    "validation_score": "9/10",
+    "judge_score": 9.0,
+    "prompt_version": "v1",
+    "timestamp": "2026-11-16T05:11:38.940813"
+  },
+  {
+    "topic": "travel to vanuatu 2026 as indian passpost holder",
+    "tone": "casual",
+    "post_type": "story",
+    "post_content": "Last week, a founder friend of mine was venting about his third visa rejection of the year.\n\nPiles of financial statements, weeks of waiting, and nothing to show for it except non-refundable flight credits.\n\nI asked him: \"Have you ever looked at Vanuatu?\"\n\nHe stared at me blankly. \"Where even is that?\"\n\nHere is something most Indian travelers completely overlook:\n\nIn 2026, while people fight for stressful 15-day embassy slots, Vanuatu quietly allows Indian passport holders to enter completely visa-free for 120 days.\n\nThat\u2019s four whole months. No embassy interview. No bank audits. Just a passport and a boarding pass to the South Pacific.\n\nIt is one of the longest visa-free stay allowances granted to Indian citizens anywhere in the world\u2014far beyond the typical 30-day tourist stamp.\n\nOur passport now grants access to around 70 destinations via visa-free, visa-on-arrival, or eTA agreements. Yet we keep returning to the same three overcrowded weekend getaways.\n\nMaybe the real travel unlock isn\u2019t waiting for approval from countries making it harder each year.\n\nIt\u2019s choosing places that welcome you with open arms.\n\nIf you had a 4-month open ticket to live and work by the Pacific, would you take it? Or is Bali still your default?",
+    "validation_score": "9/10",
+    "judge_score": 8.7,
+    "prompt_version": "v1",
+    "timestamp": "2026-11-16T05:20:45.828649"
+  }
+]

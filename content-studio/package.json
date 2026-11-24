@@ -1,0 +1,51 @@
+{
+  "name": "content-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Content Studio: Next.js + Fastify + BullMQ + Postgres for the LinkedIn multi-agent pipeline.",
+  "workspaces": [
+    "packages/shared",
+    "packages/db",
+    "packages/pipeline",
+    "apps/api",
+    "apps/worker",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "infra:up": "docker compose up -d --wait",
+    "infra:down": "docker compose down",
+    "infra:logs": "docker compose logs -f",
+    "db:generate": "npm run generate -w @studio/db",
+    "db:migrate": "dotenv -e .env -- npm run migrate:dev -w @studio/db",
+    "db:deploy": "dotenv -e .env -- npm run migrate:deploy -w @studio/db",
+    "db:import-history": "dotenv -e .env -- npm run import-history -w @studio/db",
+    "db:studio": "dotenv -e .env -- npm run studio -w @studio/db",
+    "dev": "dotenv -e .env -- concurrently --kill-others-on-fail -n api,worker,web -c blue,magenta,green \"npm run dev -w @studio/api\" \"npm run dev -w @studio/worker\" \"npm run dev -w @studio/web\"",
+    "build": "dotenv -e .env -- npm run build --workspaces --if-present",
+    "start": "dotenv -e .env -- concurrently --kill-others-on-fail -n api,worker,web -c blue,magenta,green \"npm run start -w @studio/api\" \"npm run start -w @studio/worker\" \"npm run start -w @studio/web\"",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@next/eslint-plugin-next": "16.4.5",
+    "@types/node": "24.19.2",
+    "concurrently": "9.2.5",
+    "dotenv-cli": "10.0.0",
+    "eslint": "9.39.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "16.5.0",
+    "prettier": "3.9.10",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1"
+  }
+}
